@@ -15,3 +15,16 @@ export async function addtodo(formdata) {
         console.log(error);
     }
 };
+
+export async function updatetodo(obj) {
+      try {
+       await fetch("http://localhost:3000/api/todos" ,{
+            method : "PUT",
+            body : JSON.stringify(obj)
+        });
+
+        revalidatePath("/");
+    } catch (error) {
+        console.log(error);
+    }
+};
