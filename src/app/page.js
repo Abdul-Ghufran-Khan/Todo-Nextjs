@@ -1,3 +1,4 @@
+import ListItem from "@/Components/Listitem";
 import TodoForm from "@/Components/TodoForm";
 
 
@@ -12,7 +13,7 @@ export default async function Home() {
       <TodoForm/>
       {
         res.data.map((todo) => (
-          <p key={todo.id} className="border border-black p-6 rounded-md w-2/3 mx-auto my-1">{todo.title}</p>
+          <ListItem todo={todo} key={todo.id}/>
         ))
       }
     </div>
