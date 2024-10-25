@@ -1,29 +1,29 @@
 const todos = [
-    // {
-    //     id: 1,
-    //     title: "Todo 1",
-    //     iscompleted: false
-    // },
-    // {
-    //     id: 2,
-    //     title: "Todo 2",
-    //     iscompleted: false
-    // },
-    // {
-    //     id: 3,
-    //     title: "Todo 3",
-    //     iscompleted: false
-    // },
-    // {
-    //     id: 4,
-    //     title: "Todo 4",
-    //     iscompleted: false
-    // },
-    // {
-    //     id: 5,
-    //     title: "Todo 5",
-    //     iscompleted: false
-    // }
+    {
+        id: 1,
+        title: "Todo 1",
+        iscompleted: false
+    },
+    {
+        id: 2,
+        title: "Todo 2",
+        iscompleted: false
+    },
+    {
+        id: 3,
+        title: "Todo 3",
+        iscompleted: false
+    },
+    {
+        id: 4,
+        title: "Todo 4",
+        iscompleted: false
+    },
+    {
+        id: 5,
+        title: "Todo 5",
+        iscompleted: false
+    }
 ];
 
 export async function GET(request) {
