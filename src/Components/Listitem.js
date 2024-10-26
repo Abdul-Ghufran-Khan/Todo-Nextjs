@@ -1,5 +1,5 @@
 "use client";
-import { updatetodo } from "@/actions/todo";
+import { Deletetodo, updatetodo } from "@/actions/todo";
 import { useState } from "react";
 
 
@@ -25,8 +25,11 @@ export default function ListItem({ todo }) {
             settask(todo.title)
         }
     }
-    
-    const onDelete = async () => {}
+
+    const onDelete = async () => {
+        const obj = {...todo};
+        await Deletetodo(obj);
+    }
     
     return (
         <div className={`flex justify-between border border-gray-400 p-4 items-center rounded-md w-2/3 mx-auto my-1
@@ -35,9 +38,9 @@ export default function ListItem({ todo }) {
             ?<input type="text" value={task} onChange={(e) => settask(e.target.value)} className="bg-slate-200 border border-gray-400 rounded-md cursor-pointer p-4 flex flex-grow"/>
             :<p className="cursor-pointer flex flex-grow">{todo.title}</p>
             }
-            <button onClick={onComplete} className="bg-fuchsia-200 mx-1 rounded p-2 px-3 text-sm font-semibold">{!todo.iscompleted? "Done" : "Not Done"}</button>
-            <button onClick={onEdit} className="bg-blue-200 mx-1 rounded p-2 px-3 text-sm font-semibold">{!isEdit? "Edit":"Update"}</button>
-            <button className="bg-red-200 mx-1 rounded p-2 px-3 text-sm font-semibold">Delete</button>
+            <button onClick={onComplete} className="bg-fuchsia-200 mx-3 rounded p-2 px-3 text-sm font-semibold">{!todo.iscompleted? "Done" : "Not Done"}</button>
+            <button onClick={onEdit} className="bg-blue-200 mx-3 rounded p-2 px-3 text-sm font-semibold">{!isEdit? "Edit":"Update"}</button>
+            <button onClick={onDelete} className="bg-red-200 mx-3 rounded p-2 px-3 text-sm font-semibold">Delete</button>
         </div>
     )   
     

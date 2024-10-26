@@ -29,3 +29,16 @@ export async function updatetodo(obj) {
     }
 };
 
+export async function Deletetodo(obj) {
+      try {
+       await fetch("http://localhost:3000/api/todos" ,{
+            method : "DELETE",
+            body : JSON.stringify(obj)
+        });
+
+        revalidatePath("/");
+    } catch (error) {
+        console.log(error);
+    }
+};
+

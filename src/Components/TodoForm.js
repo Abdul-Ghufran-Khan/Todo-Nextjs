@@ -12,7 +12,7 @@ export default async function TodoForm() {
         }} className="w-2/3 mx-auto flex gap-2">
         <input
           type="text"
-          className="border border-gray-700 p-4 rounded bg-slate-200 flex flex-grow my-1"
+          className="border border-gray-500 p-4 rounded bg-slate-200 flex flex-grow my-1"
           name="todo"
           placeholder="Enter Todo" />
         <input type="submit" className="bg-gray-800 rounded px-8 text-white" value={"Add Todo"} />

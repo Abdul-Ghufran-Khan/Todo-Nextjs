@@ -1,30 +1,4 @@
-const todos = [
-    {
-        id: 1,
-        title: "Todo 1",
-        iscompleted: false
-    },
-    {
-        id: 2,
-        title: "Todo 2",
-        iscompleted: false
-    },
-    {
-        id: 3,
-        title: "Todo 3",
-        iscompleted: false
-    },
-    {
-        id: 4,
-        title: "Todo 4",
-        iscompleted: false
-    },
-    {
-        id: 5,
-        title: "Todo 5",
-        iscompleted: false
-    }
-];
+const todos = [];
 
 export async function GET(request) {
     return Response.json({
@@ -54,6 +28,16 @@ export async function PUT(request) {
     return Response.json({
         data: todos,
         mess: "Todo updated Successfully"
+    })
+}
+
+export async function DELETE(request) {
+    const data = await request.json();
+    const todoIndex = todos.findIndex((todo) => todo.id === data.id);
+    todos.splice(todoIndex, 1);
+    return Response.json({
+        data: todos,
+        mess: "Todo Delete Successfully"
     })
 }
 
