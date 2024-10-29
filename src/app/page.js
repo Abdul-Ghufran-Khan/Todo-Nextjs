@@ -8,7 +8,7 @@ export default async function Home() {
   });
   res = await res.json()
   return (
-    <div className="flex flex-col items-center justify-center py-12">
+    <div className="flex flex-col items-center justify-center py-11">
       <h1 className="text-6xl font-bold text-center animate-bounce ">Todos</h1>
       <TodoForm/>
       {
